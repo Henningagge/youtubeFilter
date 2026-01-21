@@ -22,11 +22,7 @@ GET https://www.googleapis.com/youtube/v3/playlists
 videos aus Playlists:
 
 
-Liked:
 
-Channels:
-
-Videos of channels:
 
 """
 
@@ -47,5 +43,24 @@ f"https://www.googleapis.com/youtube/v3/playlistItems?key={Api_Key}&part=content
 
 #video id
 "fc0V8GHYiOw"
-#maybe ist das auch video id:¯\_(ツ)_/¯
-"UExnN2VOdHFpbVdoeVBVam9CWm9XSy01VmNJa1FmdVE0eC4yODlGNEE0NkRGMEEzMEQy"
+#diese anfrage gibt die title und description von einem video mittels einer video id sowie das title bild in verschiedenen ausführungen
+f"https://www.googleapis.com/youtube/v3/videos?key={Api_Key}&part=snippet&id=fc0V8GHYiOw"
+
+
+#note es gibt eine funktion bei videos/list : list (my liked videos)
+#nutze iframe
+src="https://www.youtube.com/embed/{video_id}
+
+
+#Channels via channel id:
+f"https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&channelId=UCsd4OmYbE6BeYEdm-Vn7pcQ&key={Api_Key}&maxResults=10"
+
+#Videos of channels:
+
+f"https://www.googleapis.com/youtube/v3/search?key={Api_Key}&channelId=UCTzZ2-byV7kigoeQ1ZQ39ig&part=snippet,id&order=date&maxResults=20"
+
+#findet channel by name:
+f"https://www.googleapis.com/youtube/v3/search?key={Api_Key}&part=snippet&q=Ear to Hear&type=channel"
+
+
+
