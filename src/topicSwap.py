@@ -1,6 +1,30 @@
-currentChanneld = ""
+from variable import currentTopicChannelId
+import re
 def switchTopic(userChannelId):
-    pass
+    pattern = 'currentTopicChannelId = "[a-z, A-Z,0-9,$&+,:;=?@#|<>.^*()%!-]*"'
+
+    variableFile = "variable.py"
+    try:
+        with open(variableFile, "r") as file:
+            lines = file.readlines()
+        with open(variableFile, "w") as file:
+            for line in lines:
+                if re.fullmatch(pattern, line):
+                    file.write(f'currentTopicChannelId = \"{userChannelId}\"')
+                else:
+                    file.write(line)
+        print("Succesfully Swaped Topic Channel")
+    except FileNotFoundError as e:
+        print(f"The file a path: {variableFile} could not be found error: {e}")
+    except Exception as e:
+        print(f"There has been an error when replacing the topic id error: {e}")
+    loadVidoeRecomendations(userChannelId)
+    return
 
 def loadVidoeRecomendations(userChannelId):
     pass
+
+def resetToStadartTopic():
+    standarttopicId = "UCsd4OmYbE6BeYEdm-Vn7pcQ"
+    switchTopic(standarttopicId)
+    loadVidoeRecomendations(standarttopicId)

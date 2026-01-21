@@ -30,9 +30,10 @@ def getPlaylistViaChannelId():
 
 
 
-
+#diese funktionalität ist verschoben weil man oAuth2 braucht undheute kein bock
 def insertIntoPlaylist(playlistid, videoid):
     pass
+    
 
 def deleteOutofPlaylist(playlistid, videoid):
     pass
