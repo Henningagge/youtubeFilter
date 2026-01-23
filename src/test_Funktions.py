@@ -1,15 +1,13 @@
-from topicSwap import switchTopic, resetToStadartTopic
-
+from Playlists import getPlaylistViaChannelId
 import unittest
+from topicSwap import switchTopic, resetToStadartTopic
 import re
-import os
+
 class TestSwitchTopi(unittest.TestCase):
     def testNormalPattern(self):
         input = "hallo123"
         output = 'currentTopicChannelId = "hallo123"'
         switchTopic(input)
-        print("kalkdölfkdsajfölsakdfölsakdjfsaölkfsalkdjsaadafasdfsaf")
-        print(os.getcwd())
         with open("./src/variable.py", "r") as file:
             lines = file.readlines()
             for line in lines:
@@ -37,6 +35,14 @@ class TestRestTopic(unittest.TestCase):
                 if re.fullmatch(output, line):
                     self.assertEqual(output, line)
 
+
+
+
+class TestGetPlaylist(unittest.TestCase):
+    def testNormalPattern(self):
+        expectedOutput = "['PLg7eNtqimWhxzVBsWVm-rxpECNuUiEJ9w', 'PLg7eNtqimWhyPUjoBZoWK-5VcIkQfuQ4x']"
+        response = getPlaylistViaChannelId()
+        self.assertEqual(f"{response}", expectedOutput)
 
 if __name__ == '__main__':
   unittest.main()
