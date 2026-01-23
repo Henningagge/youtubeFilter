@@ -1,23 +1,14 @@
 from constants import FilterHenning_Channelid, FilterHenning_User, Api_Key
-from Playlists import getPlaylistViaChannelId
+from Playlists import getPlaylistViaChannelId, getVideosinPlaylist
 
 def main():
-    getPlaylistViaChannelId()
+    playlistids = getPlaylistViaChannelId()
+    print(playlistids)
+    getVideosinPlaylist(playlistids[0])
 
 if __name__ == "__main__":
     main()
-"""
-Youtube Api Waht do i Need to do?
 
-Playlists:
-GET https://www.googleapis.com/youtube/v3/playlists
-
-videos aus Playlists:
-
-
-
-
-"""
 
 
 #Diese anfrage gibt die alle Playlists ids die ein Channel hat

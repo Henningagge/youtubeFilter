@@ -29,9 +29,27 @@ def getPlaylistViaChannelId():
         playlistIds.append(item["id"])
     return playlistIds
 
+def getVideosinPlaylist(playlistId):
+    api_service_name = "youtube"
+    api_version = "v3"
+    try:
+        youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
+        request = youtube.playlistItems().list(
+            part="contentDetails",
+            playlistId=playlistId
+        )
+        response = request.execute()
+    except Exception as e:
+        print(f"There has been an error when requesting the videos of a Playlist via it's id error:  {e}")
+        return []
 
+    videos = []
+    print(response)
+def sendPlayliststoFrontend(playlistids):
+    pass
 
 #diese funktionalität ist verschoben weil man oAuth2 braucht undheute kein bock
+#todo wie sieht das eigentlich auß brauch ich für mehrer kanäle dann immer anderes oAuth2 oder nicht?
 def insertIntoPlaylist(playlistid, videoid):
     pass
     
