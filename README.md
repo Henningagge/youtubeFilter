@@ -20,3 +20,5 @@ source youtube/bin/activate
 # ci in das Project einbinden sowie das andvance python teting frame work maybe sogar integration tests weil ich geilster programmier bin
 
 #es gibt eine funktion palylist items die könnte man nutzen für den den scheiß den du grade so schlecht in der box hast aber mock dne shit vor fix erst mal credentials
+
+currentTopicChannelId = "UCsd4OmYbE6BeYEdm-Vn7pcQ"

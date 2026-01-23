@@ -14,6 +14,11 @@ def formatVideos(shuffeldVideosarr):
 def sendVideostoFrontend(formatedVideosarr):
     pass
 
+def loadVidoeRecomendations(userChannelId):
+    pass
+
+
+
 
 #wie sieht ein video aus was dann ans front end geschicket werden soll
 #

@@ -1,9 +1,10 @@
 import os
-from constants import currentTopicChannelId, Api_Key
+from constants import  Api_Key
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
 import googleapiclient.errors
 import unittest
+from variable import currentTopicChannelId
 def getPlaylistViaChannelId():
     """
     Docstring for getPlaylistViaChannelId   
