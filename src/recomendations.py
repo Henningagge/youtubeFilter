@@ -6,10 +6,31 @@ api_service_name = "youtube"
 api_version = "v3"
 
 def getSubscribedChannels(userChannelId):
-    pass
+    youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
+    request = youtube.subscriptions().list(
+                part="snippet",
+                channelId = userChannelId
+            )
+    try:
+        response = request.execute() 
+    except Exception as e:
+        print(f"Error when trying to get Channel Recource error: {e}")
 
+    channelIds = []
+    for item in response["items"]:
+        channelIds.append(item["snippet"]["resourceId"]["channelId"])
+
+    return channelIds
 def getVideosofChannels(channelsidarr):
-    pass
+    youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
+    request = youtube.channels().list(
+                part="snippet",
+                id = ""
+            )
+    try:
+        response = request.execute() 
+    except Exception as e:
+        print(f"Error when trying to get Channel Recource error: {e}")
 
 def getChannelRecource(channelid):
     youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
@@ -20,7 +41,7 @@ def getChannelRecource(channelid):
     try:
         response = request.execute() 
     except Exception as e:
-        print(f"Channel Recource: {e}")
+        print(f"Error when trying to get Channel Recource error: {e}")
     channelRecource = []  
     channelRecource.append(response["items"][0]["id"])
     channelRecource.append(response["items"][0]["snippet"]["title"])

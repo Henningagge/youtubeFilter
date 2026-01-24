@@ -24,6 +24,7 @@ will ich Ai nutzen um die Search zu Optimieren? (warscheinlich nicht aber yagni 
 
 Ist Werbung ein Probelm muss ich addblocker bauen?
 
+Will ich privates spähre dann muss ich alles mit oauth2 nachbauen ist vieleicht für den Slop wichtig das soll ja keiner sehen
 Notes:
 
 #! https://www.youtube.com/watch?v={videoId} um sich was anzuschauen
