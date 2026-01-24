@@ -101,5 +101,14 @@ class TestGetPlaylist(unittest.TestCase):
         #check
         self.assertEqual(f"{response}", expectedOutput)
 
+class TestGetChannelRecource(unittest.TestCase):
+    def testNormalChannelId(self):
+        #given
+        input = "UCTzZ2-byV7kigoeQ1ZQ39ig"
+        #process
+        result = getChannelRecource(input)
+        #check
+        self.assertEqual(result, ["UCTzZ2-byV7kigoeQ1ZQ39ig", 'Ear to Hear', 'https://yt3.ggpht.com/oe2rtGqTvV-JKIBnUWbvbzVvoDP4_Uy3S8ZqMuUuIYJCdOOVNmlrVOviOlI8kX0CUCyV2v-Yvg=s88-c-k-c0x00ffffff-no-rj'])
+
 if __name__ == '__main__':
   unittest.main()
