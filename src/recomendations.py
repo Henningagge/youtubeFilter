@@ -1,20 +1,49 @@
 import random
-
+from constants import  Api_Key
+import googleapiclient.discovery
+api_service_name = "youtube"
+api_version = "v3"
 
 def getSubscribedChannels(userChannelId):
     pass
+
 def getVideosofChannels(channelsidarr):
     pass
 
-def getChannelName(channelid):
-    pass
+def getChannelRecource(channelid):
+    youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
+    request = youtube.channels().list(
+                part="snippet",
+                id = channelid
+            )
+    try:
+        response = request.execute() 
+    except Exception as e:
+        print(f"Channel Recource: {e}")
+    channelRecource = []  
+    channelRecource.append(response["items"][0]["id"])
+    channelRecource.append(response["items"][0]["snippet"]["title"])
+    channelRecource.append(response["items"][0]["snippet"]["thumbnails"]["default"]["url"])
+    return channelRecource
+
+
 def getVideoLength(videoid):
-    pass
-def getChanneldBanner(channelid):
-    pass  #maybe auch recource einer kanals da ist das banner ja mit dabei dann kann ich mir eine anfrage sparen
+    youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
+    request = youtube.videos().list(
+                part="contentDetails",
+                id = videoid
+            )
+    try:
+        response = request.execute() 
+    except Exception as e:
+        print(f"video length error: {e}")
+    videoLength = response["items"][0]["contentDetails"]["duration"]
+    return videoLength
+
 def formatVideos(videoUrl, thumbnail, channelname, channelBanner, length):
     pass 
     #hier soll einfach ein json geabaut werden welches dann ans front entübergeben werden kann
+    #? maybe auch nicht ich kann die ja so übergeben einfach schiecken muss mal schauen
 def sendVideostoFrontend(formatedVideosarr):
     pass
 
@@ -25,8 +54,7 @@ def loadVidoeRecomendations(userChannelId):
     for channel in channelsarr:
         pass
     
-#ich denken an ein dict mit videoids als schlüßel und dahinter dann die bannerurl, channelname, lenghtofVideo, 
-#wie sieht eine video recource aus weil ich muss die ja zuordnen
+
 
 
 #wie sieht ein video aus was dann ans front end geschicket werden soll

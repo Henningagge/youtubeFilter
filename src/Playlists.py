@@ -5,14 +5,16 @@ import googleapiclient.discovery
 import googleapiclient.errors
 import unittest
 from variable import currentTopicChannelId
+from recomendations import getChannelRecource, getVideoLength
+api_service_name = "youtube"
+api_version = "v3"
+
 def getPlaylistViaChannelId():
     """
     Docstring for getPlaylistViaChannelId   
 
     returns a list of playlist ids
     """
-    api_service_name = "youtube"
-    api_version = "v3"
     try:
         youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
         request = youtube.playlists().list(
@@ -34,8 +36,7 @@ def getPlaylistViaChannelId():
     return playlistRecource
 
 def getVideosinPlaylist(playlistId):
-    api_service_name = "youtube"
-    api_version = "v3"
+    
     try:
         youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
         request = youtube.playlistItems().list(
@@ -58,7 +59,32 @@ def getVideosinPlaylist(playlistId):
 
 
 def openPlaylists(playlistid):
-    pass
+    videoIds = getVideosinPlaylist(playlistid)
+    videoRecource = {}
+    youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey=Api_Key)
+    for videoId in videoIds:
+        videoLength = getVideoLength(videoId)   
+        videoRecource[videoId] = videoLength
+
+    for videoId in videoIds:
+        request = youtube.videos().list(
+                part="snippet",
+                id = videoId
+            )
+        response = request.execute() 
+        videoTitle = response["items"][0]["snippet"]["title"]
+        channelid = response["items"][0]["snippet"]["channelId"]
+        vidoeThumbnail = response["items"][0]["snippet"]["thumbnails"]["default"]["url"]
+        channelRecource = getChannelRecource(channelid)
+        #Duration, title, ThumbnailUrl, ChannelId, channelName, ChannelBanner
+        videoRecource[videoId] = [videoRecource[videoId], videoTitle,  vidoeThumbnail, channelid, channelRecource[1], channelRecource[2]]
+    #! die struckter nohc keil machen damit z.b videoDuration: 10m30s
+
+    return videoRecource
+
+
+
+
 
 
 
