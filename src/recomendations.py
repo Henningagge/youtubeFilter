@@ -1,6 +1,7 @@
 import random
 from constants import  Api_Key
 import googleapiclient.discovery
+import re
 api_service_name = "youtube"
 api_version = "v3"
 
@@ -38,7 +39,25 @@ def getVideoLength(videoid):
     except Exception as e:
         print(f"video length error: {e}")
     videoLength = response["items"][0]["contentDetails"]["duration"]
-    return videoLength
+    hourPatern = "[0-9]*H"
+    minutePattern = "[0-9]*M"
+    secondPattern = "[0-9]*S"
+    videoLengthString = ""
+    houres =  re.findall(hourPatern, videoLength)
+    minutes = re.findall(minutePattern, videoLength)
+    seconds = re.findall(secondPattern, videoLength)
+    if houres:
+        videoLengthString = houres + ":" + minutes + ":" + seconds
+    elif minutes:
+        videoLengthString  = minutes + ":" + seconds 
+    elif seconds:
+        videoLengthString = "0:" + seconds
+    else:
+        raise Exception ("Video has no Time")
+    
+    print(f"videolengthstring1  {videoLengthString}")
+
+    return videoLengthString
 
 def formatVideos(videoUrl, thumbnail, channelname, channelBanner, length):
     pass 

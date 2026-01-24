@@ -19,6 +19,8 @@ wie mock man eigentlich
 will ich eine Such funktion
 will ich Ai nutzen um die Search zu Optimieren? (warscheinlich nicht aber yagni is usless)
 
+Ist Werbung ein Probelm muss ich addblocker bauen?
+
 Notes:
 
 #! https://www.youtube.com/watch?v={videoId} um sich was anzuschauen
