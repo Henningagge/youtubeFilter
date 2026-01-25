@@ -7,42 +7,72 @@
     <link href="./output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 id="TopicChannel" class="font-extrabold">
-      Currentchannel: FilterHenning
-    </h1>
-    <button id="TopicSwap">TopicSwap</button>
-    <button id="Playlists">Playlists</button>
-    <button id="Recomendations">Recomendations</button>
+    <div class="bg-black">
+      <h1 id="TopicChannel" class="font-bold text-gray-50">
+        Currentchannel: FilterHenning
+      </h1>
+      <button
+        id="TopicSwap"
+        class="font-bold p-2 text-gray-50 bg-gray-600 rounded-xl focus:bg-gray-700"
+      >
+        TopicSwap
+      </button>
+      <button
+        id="Playlists"
+        class="font-bold p-2 text-gray-50 bg-gray-600 rounded-xl focus:bg-gray-700"
+      >
+        Playlists
+      </button>
+      <button
+        id="Recomendations"
+        class="font-bold p-2 text-gray-50 bg-gray-600 rounded-xl focus:bg-gray-700"
+      >
+        Recomendations
+      </button>
 
-    <div class="VideoBox">
-      <div class="video">
-        <iframe
-          class="videoScreen"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/fc0V8GHYiOw"
-          frameborder="0"
-          allow="
-            accelerometer;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-          "
-          allowfullscreen
-        ></iframe>
-        <div class="subvideo">
-          <div class="channelBox">
+      <div class="border-2 paddin">
+        <div class="border-2">
+          <iframe
+            class="rounded-xl"
+            width="400"
+            height="250"
+            src="https://www.youtube.com/embed/fc0V8GHYiOw"
+            frameborder="0"
+            allow="
+              accelerometer;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
+          <div class="flex items-start">
             <img
               src="https://yt3.ggpht.com/s_TSFtIs5t1fof3GjnZj32Nr325cxPlSI-3CesmvVKFVR0oTKl5-QBSxcOv31HTlQKljVxOw=s88-c-k-c0x00ffffff-no-rj"
-              class="channelBanner"
+              class="rounded-full w-12 h-12 object-cover mr-2"
+              alt="Channel Avatar"
             />
-            <h5 class="channelName">Bible Animations</h5>
+            <div>
+              <h6 class="text-gray-50 w-80">
+                The Entire Old Testament Drawadlkjadfl kjsdflksjdfsaakjf dsan
+                and Explained
+              </h6>
+              <div class="flex items-center">
+                <h5
+                  class="text-gray-50 mr-44 font-bold text-xl overflow-x-hidden"
+                >
+                  Bible Animations
+                </h5>
+                <button
+                  id="videoInterakt1"
+                  class="text-gray-50 right-0 font-bold text-3xl focus:text-gray-300"
+                >
+                  :
+                </button>
+              </div>
+            </div>
           </div>
-          <h6 class="videoTitle">
-            The Entire Old Testament Drawn and Explained
-          </h6>
-          <button class="videoInteraktion">:</button>
         </div>
       </div>
     </div>
