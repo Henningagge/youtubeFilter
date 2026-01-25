@@ -19,6 +19,8 @@ Brauchen ich eine DB für das chaching von daten und dann nur einmal täglich ma
 
 wie mock man eigentlich
 
+will ich eine Suchfunktion?
+
 will ich eine Such funktion
 will ich Ai nutzen um die Search zu Optimieren? (warscheinlich nicht aber yagni is usless)
 
