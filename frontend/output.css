@@ -13,6 +13,7 @@
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-900: oklch(21% 0.034 264.665);
+    --color-stone-200: oklch(92.3% 0.003 48.717);
     --color-black: #000;
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
@@ -446,6 +447,9 @@
   }
   .text-gray-200 {
     color: var(--color-gray-200);
+  }
+  .text-stone-200 {
+    color: var(--color-stone-200);
   }
   .capitalize {
     text-transform: capitalize;

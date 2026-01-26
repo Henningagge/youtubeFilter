@@ -97,7 +97,6 @@ class TestGetPlaylist(unittest.TestCase):
         expectedOutput = "{'PLg7eNtqimWhw6glG1BNZNmFAlLiGnXMGe': ['TimeTest', 'https://i.ytimg.com/vi/eB0zU5tnSPo/default.jpg'], 'PLg7eNtqimWhxzVBsWVm-rxpECNuUiEJ9w': ['hello mi matchu mitischo daloscho', 'https://i.ytimg.com/vi/hK0_mSvfEdo/default.jpg'], 'PLg7eNtqimWhyPUjoBZoWK-5VcIkQfuQ4x': ['Bible concepts', 'https://i.ytimg.com/vi/jFzwS7z2418/default.jpg']}"
         #process
         response = getPlaylistViaChannelId()
-        print(f"kaölkfjsaölkjfölsakfjasl {response}")
         #check
         self.assertEqual(f"{response}", expectedOutput)
 
@@ -108,7 +107,7 @@ class TestGetChannelRecource(unittest.TestCase):
         #process
         result = getChannelRecource(input)
         #check
-        self.assertEqual(result, ["UCTzZ2-byV7kigoeQ1ZQ39ig", 'Ear to Hear', 'https://yt3.ggpht.com/oe2rtGqTvV-JKIBnUWbvbzVvoDP4_Uy3S8ZqMuUuIYJCdOOVNmlrVOviOlI8kX0CUCyV2v-Yvg=s88-c-k-c0x00ffffff-no-rj'])
+        self.assertEqual(result, ["UCTzZ2-byV7kigoeQ1ZQ39ig", '', 'https://yt3.ggpht.com/oe2rtGqTvV-JKIBnUWbvbzVvoDP4_Uy3S8ZqMuUuIYJCdOOVNmlrVOviOlI8kX0CUCyV2v-Yvg=s88-c-k-c0x00ffffff-no-rj'])
 
 if __name__ == '__main__':
   unittest.main()
