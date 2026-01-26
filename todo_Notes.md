@@ -12,6 +12,7 @@
 9. edcase wie wen playlist lehr ist oder keine abonierten channels
 10. erklärung und cloning in die readme schreiben
 11. für oauth2 umbauen damit ich private stellen kann
+12. so ein banner von boot.dev und das banner mit wie viel prozent der test passen
 
 # Fragen
 

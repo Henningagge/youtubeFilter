@@ -1,3 +1,12 @@
+# All a work in Progress pleas don't guge i brock all the stuff
+
+Contact Me
+I hang out in the Boot.dev Discord rero2141. Let me know what you thought of the project!
+
+# There is no konkrete setup plan yet!!!! but there will be in the futur so you can descide what should be recomendet in youre youtube!!!
+
+# Just some notes
+
 python3 ./src/server.py
 
 Maybe eine DB umd videos daten zu cachen wen ich bei zu häufigen öffnene in ratelimeting reinlaufe

@@ -16,9 +16,10 @@ def servermain():
 def loadRecomendationsApi():
     result = loadVidoeRecomendations("UCsd4OmYbE6BeYEdm-Vn7pcQ")
     return result
+
 @app.route("/swap")
 def swapTopicApi():
-    switchTopic()
+    switchTopic("UCsd4OmYbE6BeYEdm-Vn7pcQ")
 
 
 @app.route("/playlists")
@@ -26,7 +27,7 @@ def loadPlaylistsApi():
     result = getPlaylistViaChannelId()
     return result
 
-@app.route("/openPlaylist/{id}")
+@app.route("/openPlaylist")
 def openPlaylistApi():
     result = openPlaylist("PLg7eNtqimWhwQsTr__Npprv7O26GBC8Yf")
     return result
