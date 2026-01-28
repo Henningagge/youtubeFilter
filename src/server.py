@@ -7,6 +7,7 @@ from flask_cors import CORS, cross_origin
 from flask import Flask, request
 
 app = Flask(__name__)
+cors = CORS(app)
 @app.route("/")
 def servermain():
     return "Hello from Server"
@@ -24,13 +25,15 @@ def swapTopicApi():
 
 @app.route("/playlists")
 def loadPlaylistsApi():
-    result = getPlaylistViaChannelId()
-    return result
+    response = getPlaylistViaChannelId()
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route("/openPlaylist")
 def openPlaylistApi():
-    result = openPlaylist("PLg7eNtqimWhwQsTr__Npprv7O26GBC8Yf")
-    return result
+    response = openPlaylist("PLg7eNtqimWhwQsTr__Npprv7O26GBC8Yf")
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 if __name__ == "__main__":
     app.run()
