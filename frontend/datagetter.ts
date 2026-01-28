@@ -44,7 +44,7 @@ export async function open_playlist(playlistid: string) {
 export async function swapChannel(channelid: string) {
   try {
     const response = await fetch(serverUrl + '/swap', {
-      method: 'GET',
+      method: 'POST',
       body: channelid,
     });
     if (!response.ok) {

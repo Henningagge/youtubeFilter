@@ -13,27 +13,22 @@
 10. erklärung und cloning in die readme schreiben
 11. für oauth2 umbauen damit ich private stellen kann
 12. so ein banner von boot.dev und das banner mit wie viel prozent der test passen
+13. meinen funktion gut exceptions geben wen sie das brauchen
+14. flake8 pyright und die anderen sachen die die im Team benutzen einbauen
 
 # Fragen
 
 brauche ich eine easy version zum registrieren von nutzer weil das soll ja bei github auch jemand bauen können
 Brauchen ich eine DB für das chaching von daten und dann nur einmal täglich massiven aufwand machen?
 
-wie mock man eigentlich
-
 will ich eine Suchfunktion?
 
-will ich eine Such funktion
 will ich Ai nutzen um die Search zu Optimieren? (warscheinlich nicht aber yagni is usless)
 
 Ist Werbung ein Probelm muss ich addblocker bauen?
 
-Will ich privates spähre dann muss ich alles mit oauth2 nachbauen ist vieleicht für den Slop wichtig das soll ja keiner sehen
+Will ich privates spähre dann muss ich alles mit oauth2 nachbauen
 Notes:
-
-#! https://www.youtube.com/watch?v={videoId} um sich was anzuschauen
-#! <iframe width="560" height="315" src="https://www.youtube.com/embed/{vidoeId}"
-#! frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #Diese anfrage gibt die alle Playlists ids die ein Channel hat
 f"https://www.googleapis.com/youtube/v3/playlists?key={Api_Key}&part=contentDetails&channelId={FilterHenning_Channelid}&maxResults=10"

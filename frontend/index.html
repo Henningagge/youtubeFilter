@@ -15,7 +15,6 @@
         <button
           id="TopicSwap"
           class="font-bold p-2 text-gray-50 bg-gray-600 rounded-xl focus:bg-gray-700"
-          onclick="openPanel()"
         >
           TopicSwap
         </button>
@@ -41,7 +40,7 @@
             "
           >
             <h2 class="text-amber-700">Topic Channels</h2>
-            <button onclick="closePanel()" class="hover:text-2xl">X</button>
+            <button class="hover:text-2xl" id="closePanelButton">X</button>
           </div>
           <ul id="topicList" class="warp">
             <button id="filter" class="focus:text-stone-500">
@@ -52,25 +51,24 @@
             <li></li>
             <button id="python" class="focus:bg-black">PythonHenning</button>
           </ul>
-          <button onclick="addTopicChannel()">Add New Channel</button>
+          <button id="newChannelButton">Add New Channel</button>
         </div>
         <button
           id="Playlists"
           class="font-bold p-2 text-gray-50 bg-gray-600 rounded-xl focus:bg-gray-700"
-          onclick="loadPlaylists()"
         >
           Playlists
         </button>
         <button
           id="Recomendations"
           class="font-bold p-2 text-gray-50 bg-gray-600 rounded-xl focus:bg-gray-700"
-          onclick="loadRecomendations()"
         >
           Recomendations
         </button>
       </div>
       <div class="border-2 p-4 h-full overflow-y-scroll flex flex-wrap">
-        <div class="mb-4 border-2 p-2 w-full md:w-1/2 lg:w-1/3">
+        <div class="mb-4 border-2 p-2 w-full md:w-1/2 lg:w-1/3" id="videoDiv">
+          //! this is the div in which the video goes
           <iframe
             class="rounded-xl w-full"
             height="250"
@@ -371,5 +369,8 @@
       </div>
     </div>
   </body>
-  <script src="index.js"></script>
+  <script>
+    const topicSwapButton = document.getElementById('TopicSwap');
+    topicSwapButton.addEventListener('click', console.log('hello'));
+  </script>
 </html>

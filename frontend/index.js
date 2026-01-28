@@ -1,3 +1,49 @@
+import { get_playlists, get_recomendations, open_playlist } from './datagetter';
+import {
+  buildPlaylistsRecources,
+  buildRecomendationRecource,
+} from './dataformat';
+
+// Playlists Button
+const playlistsButton = document.getElementById('Playlists');
+if (playlistsButton) {
+  playlistsButton.addEventListener('click', loadPlaylists);
+} else {
+  console.error('Playlists button not found');
+}
+
+// Recomendations Button
+const recomendationsButton = document.getElementById('Recomendations');
+if (recomendationsButton) {
+  recomendationsButton.addEventListener('click', loadRecomendations);
+} else {
+  console.error('Recomendations button not found');
+}
+
+// New Channel Button
+const newChannelButton = document.getElementById('newChannelButton');
+if (newChannelButton) {
+  newChannelButton.addEventListener('click', addTopicChannel);
+} else {
+  console.error('New Channel button not found');
+}
+
+// Close Panel Button
+const closePanelButton = document.getElementById('closePanelButton');
+if (closePanelButton) {
+  closePanelButton.addEventListener('click', closePanel);
+} else {
+  console.error('Close Panel button not found');
+}
+
+// TopicSwap Button
+const topicSwapButton = document.getElementById('TopicSwap');
+if (topicSwapButton) {
+  topicSwapButton.addEventListener('click', openPanel);
+} else {
+  console.error('TopicSwap button not found');
+}
+
 function openPanel() {
   console.log('hello');
   document.getElementById('topicPanel').style.display = 'block';
@@ -20,6 +66,18 @@ function addTopicChannel() {
   }
 }
 
-function loadRecomendations() {}
+function loadRecomendations() {
+  let recomendations = get_recomendations();
+  let recomendationHTML = buildRecomendationRecource(recomendations);
+  console.log(recomendationHTML);
+}
 
-function loadPlaylists() {}
+function loadPlaylists() {
+  let playlists = get_playlists();
+  let playlistsHTML = buildPlaylistsRecources(playlists);
+  console.log(playlistsHTML);
+}
+
+function openPlaylist(id) {
+  console.log('hello world will build later');
+}
