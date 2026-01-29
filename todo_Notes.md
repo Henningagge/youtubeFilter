@@ -15,6 +15,8 @@
 12. so ein banner von boot.dev und das banner mit wie viel prozent der test passen
 13. meinen funktion gut exceptions geben wen sie das brauchen
 14. flake8 pyright und die anderen sachen die die im Team benutzen einbauen
+15. likes geben
+16. liked sowie später ansehen playylists krigen
 
 # Fragen
 

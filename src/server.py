@@ -26,13 +26,13 @@ def swapTopicApi():
 @app.route("/playlists")
 def loadPlaylistsApi():
     response = getPlaylistViaChannelId()
-    response.headers.add('Access-Control-Allow-Origin', '*')
+
     return response
 
 @app.route("/openPlaylist")
 def openPlaylistApi():
     response = openPlaylist("PLg7eNtqimWhwQsTr__Npprv7O26GBC8Yf")
-    response.headers.add('Access-Control-Allow-Origin', '*')
+
     return response
 
 if __name__ == "__main__":
